@@ -15,3 +15,36 @@
       SASS (middle)
       CSCC (middle)
       JS (junior)
+
+# 5. Code example
+   Find the unique number
+   
+    function findUniq(arr) {
+      let num = arr[0];
+      let n = [];
+      let s = 0;
+      for (let i = 1; i < arr.length; i++) {
+          if (num == arr[i]){
+              continue;
+          } else if (num != arr[i]) {
+              n[s] = arr[i];
+              s++;
+          }
+      }
+      if (n.length > 1) {
+          return num;
+      } else if (n.length == 1) {
+          return +n;
+      }
+    }
+    findUniq([ 1, 1, 1, 2, 1, 1 ]);
+    
+# 6. Project
+      No project
+
+# 7. Education
+      Software Engineering  (Bachelor)
+      Udemy courses
+      
+# 8. English level 
+      A2
