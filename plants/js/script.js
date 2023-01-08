@@ -1,18 +1,17 @@
-function myFunction() {
-    document.getElementsByClassName("dropdown-content").classList.toggle("show");
-}
+window.addEventListener('DOMContentLoaded', () => {
+  const menu = document.querySelector('.menu'),
+  menuItem = document.querySelectorAll('.menu_item'),
+  hamburger = document.querySelector('.hamburger');
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
+  hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('hamburger_active');
+      menu.classList.toggle('menu_active');
+  });
 
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-};
+  menuItem.forEach(item => {
+      item.addEventListener('click', () => {
+          hamburger.classList.toggle('hamburger_active');
+          menu.classList.toggle('menu_active');
+      });
+  });
+});
